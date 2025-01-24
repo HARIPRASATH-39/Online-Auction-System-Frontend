@@ -1,0 +1,83 @@
+/* List Categories Container */
+.list-categories-container {
+  background-color: #1a1a1a; /* Graphite Black */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* List Categories Title */
+.list-categories-title {
+  color: #ff6f00; /* Orange */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Search Bar */
+.search-bar .input-group-text {
+  background-color: white; /* Dark Gray */
+  border: 1px solid black;
+  color: black; /* Light Gray */
+}
+
+.search-bar .form-control {
+  background-color: white; /* Dark Gray */
+  border: 1px solid black;
+  color: black; /* Light Gray */
+}
+
+.search-bar .form-control::placeholder {
+  color: #888; /* Light Gray for placeholder */
+}
+
+.search-bar .form-control:focus {
+  border-color: #ff6f00; /* Orange */
+  box-shadow: 0 0 0 0.2rem rgba(255, 111, 0, 0.25);
+}
+
+/* Categories Table */
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #262626; /* Darker Graphite Black */
+  color: #f4f4f4; /* Light Gray */
+}
+
+.categories-table th,
+.categories-table td {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  color: #f4f4f4; /* Light Gray */
+}
+
+.categories-table th {
+  background-color: #333; /* Dark Gray */
+  color: #ff6f00; /* Orange */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.categories-table th:hover {
+  background-color: #444; /* Lighter Gray */
+}
+
+.categories-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.categories-table tbody tr:hover {
+  background-color: #333; /* Dark Gray */
+}
+
+/* Sort Icons */
+.bi-sort-down,
+.bi-sort-up {
+  color: #ff6f00; /* Orange */
+}
+
+/* No Categories Found Message */
+.text-center {
+  color: #f4f4f4; /* Light Gray */
+}

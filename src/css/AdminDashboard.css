@@ -1,0 +1,47 @@
+/* Custom Sidebar */
+.custom-sidebar {
+  background-color: #1a1a1a; /* Graphite Black */
+  border-right: 2px solid #ff6f00; /* Orange Accent */
+}
+
+.custom-sidebar .nav-link {
+  color: #f4f4f4; /* Light Gray */
+  transition: color 0.3s ease;
+}
+
+.custom-sidebar .nav-link:hover {
+  color: #ff6f00; /* Orange on Hover */
+}
+
+/* Main Content */
+.welcome {
+  color: #ff6f00; /* Orange */
+}
+
+/* Custom Cards */
+.custom-card {
+  background-color: #262626; /* Darker Graphite Black */
+  border: 1px solid #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(255, 111, 0, 0.2); /* Orange Shadow */
+}
+
+/* Icons */
+.text-orange {
+  color: #ff6f00; /* Orange */
+}
+
+/* Card Titles */
+.custom-card .card-title,
+.custom-card .card-text {
+  color: #000000; /* Black */
+}
+
+/* Hover Effect */
+.hover-effect:hover {
+  background-color: #333; /* Slightly lighter dark gray */
+}

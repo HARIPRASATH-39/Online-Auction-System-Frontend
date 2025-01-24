@@ -1,0 +1,76 @@
+/* Add Product Container */
+.add-product-container {
+  background-color: #1a1a1a; /* Graphite Black */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add Product Title */
+.add-product-title {
+  color: #ff6f00; /* Orange */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Form Label */
+.form-label {
+  color: #f4f4f4; /* Light Gray */
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.options {
+  color: white;
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333; /* Dark Gray */
+  color: #f4f4f4; /* Light Gray */
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #ff6f00; /* Orange */
+  box-shadow: 0 0 0 0.2rem rgba(255, 111, 0, 0.25);
+}
+
+/* Image Preview */
+.image-preview {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff6f00; /* Orange */
+  border: none;
+  border-radius: 5px;
+  color: #1a1a1a; /* Graphite Black */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ff8f00; /* Lighter Orange */
+}

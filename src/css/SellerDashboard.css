@@ -1,0 +1,192 @@
+/* Custom Sidebar */
+.custom-sidebar {
+  background-color: #1a1a1a;
+  border-right: 2px solid #ff6f00;
+}
+
+.custom-sidebar .nav-link {
+  color: #f4f4f4;
+  transition: color 0.3s ease;
+}
+
+.custom-sidebar .nav-link:hover {
+  color: #ff6f00;
+}
+
+/* Main Content */
+.welcome {
+  color: #ff6f00;
+}
+
+/* Custom Cards */
+.custom-card {
+  color: white;
+  background-color: white;
+  border: 1px solid #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(255, 111, 0, 0.2);
+}
+
+/* Card Titles and Text */
+.card-title {
+  color: #ff6f00;
+}
+
+.card-text {
+  color: #f4f4f4;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #ff6f00;
+  border: none;
+  color: #1a1a1a;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff8f00;
+}
+
+.btn-info {
+  background-color: green;
+  border: none;
+  color: #f4f4f4;
+  transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #666;
+}
+
+.btn-danger {
+  background-color: red;
+  border: none;
+  color: #f4f4f4;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Alert Messages */
+.alert-info {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #f4f4f4;
+}
+/* Confirmation Dialog Styles */
+.confirmation-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-buttons {
+  margin-top: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Button Styling */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; /* Fixed width */
+  height: 40px;
+  padding: 0; /* Remove padding */
+}
+
+.btn-icon i {
+  font-size: 16px; /* Icon size */
+}
+
+/* View Details Button */
+.btn-info.btn-icon {
+  background-color: rgb(10, 177, 35); /* Bootstrap info color */
+
+  border: none;
+}
+
+.btn-info.btn-icon:hover {
+  background-color: green;
+}
+
+/* Delete Button */
+.btn-danger.btn-icon {
+  background-color: red;
+  border: none;
+}
+
+.btn-danger.btn-icon:hover {
+  background-color: #c82333;
+}
+
+/* SOLD Overlay */
+.sold-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(220, 53, 69, 0.7); /* Semi-transparent red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2; /* Ensure the overlay is above the image */
+}
+
+/* Ensure the image is positioned correctly */
+.custom-card img {
+  position: relative;
+  z-index: 1; /* Image should be below the overlay */
+}

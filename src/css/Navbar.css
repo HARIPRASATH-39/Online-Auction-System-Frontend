@@ -1,0 +1,74 @@
+/* Navbar Container */
+.navbar {
+  background-color: #1a1a1a; /* Graphite Black */
+  padding: 1rem 0;
+  border-bottom: 2px solid #ff6f00; /* Orange Accent */
+}
+
+/* Brand/Logo Styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #ff6f00 !important; /* Orange */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #ff8f00 !important; /* Lighter Orange on Hover */
+}
+
+.logo-text {
+  margin-right: 0.5rem;
+}
+
+.logo-icon .custom-icon {
+  color: #ff6f00; /* Orange */
+  font-size: 1.8rem;
+}
+
+/* Navbar Links */
+.navbar-nav {
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #f4f4f4 !important; /* Light Gray for Text */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6f00 !important; /* Orange on Hover */
+}
+
+/* Login/Logout Buttons */
+.login-btn,
+.logout-btn {
+  background-color: #ff6f00; /* Orange */
+  color: #1a1a1a !important; /* Graphite Black */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #ff8f00; /* Lighter Orange on Hover */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+}

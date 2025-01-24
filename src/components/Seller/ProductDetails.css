@@ -1,0 +1,68 @@
+/* Product Details Container */
+.product-details-container {
+  background-color: #1a1a1a; /* Graphite Black */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Details Title */
+.product-details-title {
+  color: #ff6f00; /* Orange */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Product Details Card */
+.product-details-card {
+  background-color: #262626; /* Darker Graphite Black */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Product Image */
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  object-fit: cover;
+}
+
+/* Product Details Body */
+.product-details-body {
+  padding: 2rem;
+  color: #f4f4f4; /* Light Gray */
+}
+
+.product-name {
+  color: #ff6f00; /* Orange */
+  margin-bottom: 1.5rem;
+}
+
+.product-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.product-text strong {
+  color: #ff6f00; /* Orange */
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.status-badge.sold {
+  background-color: #dc3545; /* Red */
+  color: #f4f4f4; /* Light Gray */
+}
+
+.status-badge.unsold {
+  background-color: #28a745; /* Green */
+  color: #f4f4f4; /* Light Gray */
+}

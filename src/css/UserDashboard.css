@@ -1,0 +1,115 @@
+/* Sidebar */
+.custom-sidebar {
+  background-color: #1a1a1a; /* Graphite Black */
+  border-right: 2px solid #ff6f00; /* Orange Accent */
+}
+
+.custom-sidebar .nav-link {
+  color: #f4f4f4; /* Light Gray */
+  transition: color 0.3s ease;
+}
+
+.custom-sidebar .nav-link:hover {
+  color: #ff6f00; /* Orange on Hover */
+}
+
+.card-body {
+  background-color: white;
+  color: black;
+}
+
+/* Main Content */
+.welcome {
+  color: #ff6f00; /* Orange */
+}
+
+/* Category Filter */
+.form-select {
+  background-color: #ffffff; /* White */
+  border: 1px solid #ccc; /* Light Gray Border */
+  color: #000000; /* Black */
+}
+
+.form-select:focus {
+  border-color: #ff6f00; /* Orange */
+  box-shadow: 0 0 0 0.2rem rgba(255, 111, 0, 0.25);
+}
+
+/* Product Cards */
+.custom-card {
+  background-color: #ffffff; /* White */
+  border: 1px solid #ccc; /* Light Gray Border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+}
+
+.custom-card .card-title,
+.custom-card .card-text {
+  color: #000000; /* Black */
+}
+
+/* Buttons */
+.btn-info {
+  background-color: #ff6f00; /* Orange */
+  border: none;
+  color: #ffffff; /* White */
+  transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #ff8f00; /* Lighter Orange */
+}
+
+.btn-primary {
+  background-color: #444; /* Dark Gray */
+  border: none;
+  color: #ffffff; /* White */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #666; /* Lighter Gray */
+}
+
+/* Alert Messages */
+.alert-info {
+  background-color: #f8f9fa; /* Light Gray */
+  border: 1px solid #ccc; /* Light Gray Border */
+  color: #000000; /* Black */
+}
+/* Image Container */
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* SOLD Overlay using Pseudo-Element */
+.image-container.sold::before {
+  content: "SOLD"; /* Text to display */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(220, 53, 69, 0.7); /* Semi-transparent red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2; /* Ensure the overlay is above the image */
+}
+
+/* Ensure the image is positioned correctly */
+.custom-card img {
+  position: relative;
+  z-index: 1; /* Image should be below the overlay */
+}

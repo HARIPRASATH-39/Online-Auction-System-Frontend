@@ -1,0 +1,139 @@
+/* List Users Container */
+.list-users-container {
+  background-color: #1a1a1a; /* Graphite Black */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* List Users Title */
+.list-users-title {
+  color: #ff6f00; /* Orange */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Search Bar */
+.search-bar .input-group-text {
+  background-color: white; /* Dark Gray */
+  border: 1px solid #444;
+  color: black; /* Light Gray */
+}
+
+.search-bar .form-control {
+  background-color: white; /* Dark Gray */
+  border: 1px solid #444;
+  color: black; /* Light Gray */
+}
+
+.search-bar .form-control::placeholder {
+  color: #888; /* Light Gray for placeholder */
+}
+
+.search-bar .form-control:focus {
+  border-color: #ff6f00; /* Orange */
+  box-shadow: 0 0 0 0.2rem rgba(255, 111, 0, 0.25);
+}
+
+/* Users Table */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #262626; /* Darker Graphite Black */
+  color: #f4f4f4; /* Light Gray */
+}
+
+.users-table th,
+.users-table td {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  color: #f4f4f4; /* Light Gray */
+}
+
+.users-table th {
+  background-color: #333; /* Dark Gray */
+  color: #ff6f00; /* Orange */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.users-table th:hover {
+  background-color: #444; /* Lighter Gray */
+}
+
+.users-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.users-table tbody tr:hover {
+  background-color: #333; /* Dark Gray */
+}
+
+/* Delete Button */
+.delete-button {
+  background-color: #dc3545; /* Red */
+  border: none;
+  color: #f4f4f4; /* Light Gray */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker Red */
+}
+
+/* Sort Icons */
+.bi-sort-down,
+.bi-sort-up {
+  color: #ff6f00; /* Orange */
+}
+
+/* Confirmation Dialog Styles */
+.confirmation-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-buttons {
+  margin-top: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
