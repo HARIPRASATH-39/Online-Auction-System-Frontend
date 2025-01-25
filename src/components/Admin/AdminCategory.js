@@ -22,14 +22,15 @@ const AdminCategory = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.get(
         "http://localhost:8081/auction/category/getAllCategory",
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setCategories(response.data);
@@ -42,14 +43,15 @@ const AdminCategory = () => {
   };
 
   const deleteCategory = async (categoryId) => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       await axios.delete(
         `http://localhost:8081/auction/category/delete/${categoryId}`,
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       toast.success("Category deleted successfully!", {
@@ -90,8 +92,7 @@ const AdminCategory = () => {
   };
 
   const addCategory = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     const category = { id: newCategoryId, categoryName: newCategoryName };
 
@@ -100,7 +101,9 @@ const AdminCategory = () => {
         "http://localhost:8081/auction/category/addNewCategory",
         category,
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       toast.success("Category added successfully!", {

@@ -8,10 +8,9 @@ const MyProducts = () => {
   const [bids, setBids] = useState([]); // State to store bidding information
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const userId = localStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
 
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const token = sessionStorage.getItem("token");
 
   // Fetch bidding information for the current user
   useEffect(() => {
@@ -20,7 +19,9 @@ const MyProducts = () => {
         const response = await axios.get(
           `http://localhost:8081/auction/bid/getbyuser/${userId}`,
           {
-            auth: { username, password },
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
         );
         setBids(response.data); // Set the bidding information

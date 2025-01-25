@@ -7,11 +7,12 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
 
   const handleLogout = () => {
     // Clear local storage
-    localStorage.removeItem("username");
-    localStorage.removeItem("password");
-    localStorage.removeItem("loggedIn");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("useRole");
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("password");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("useRole");
 
     // Update loggedIn state
     setLoggedIn(false);

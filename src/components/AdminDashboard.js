@@ -30,7 +30,7 @@ const AdminDashboard = () => {
         {/* Main Content */}
         <div className="col-md-10 p-4">
           <h3 className="welcome mb-4 text-white">
-            Welcome {localStorage.getItem("username")}
+            Welcome {sessionStorage.getItem("username")}
           </h3>
 
           <div className="row">

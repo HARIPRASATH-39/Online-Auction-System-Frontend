@@ -17,9 +17,9 @@ const UserProfile = () => {
     password: "",
   });
 
-  const userId = localStorage.getItem("userId");
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const userId = sessionStorage.getItem("userId");
+
+  const token = sessionStorage.getItem("token");
 
   // Fetch user details
   useEffect(() => {
@@ -28,9 +28,8 @@ const UserProfile = () => {
         const response = await axios.get(
           `http://localhost:8081/auction/user/find/${userId}`,
           {
-            auth: {
-              username,
-              password,
+            headers: {
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -68,9 +67,8 @@ const UserProfile = () => {
         `http://localhost:8081/auction/user/update/${userId}`,
         formData,
         {
-          auth: {
-            username,
-            password,
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
         }
       );

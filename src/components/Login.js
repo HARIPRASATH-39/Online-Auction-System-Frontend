@@ -21,11 +21,11 @@ function Login({ setLoggedIn, setUserRole }) {
       );
 
       // Store user data in local storage
-      localStorage.setItem("username", response.data.username);
-      localStorage.setItem("password", password);
-      localStorage.setItem("loggedIn", true);
-      localStorage.setItem("userRole", response.data.roles);
-      localStorage.setItem("userId", response.data.id);
+      sessionStorage.setItem("username", response.data.username);
+      sessionStorage.setItem("token", response.data.token);
+      sessionStorage.setItem("loggedIn", true);
+      sessionStorage.setItem("userRole", response.data.roles);
+      sessionStorage.setItem("userId", response.data.id);
 
       // Update loggedIn and userRole state
       setLoggedIn(true);

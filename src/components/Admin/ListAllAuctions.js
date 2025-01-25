@@ -16,14 +16,15 @@ const ListAllAuctions = () => {
   }, []);
 
   const fetchAuctions = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.get(
         "http://localhost:8081/auction/bid/getall",
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       console.log("API Response:", response.data); // Log the response

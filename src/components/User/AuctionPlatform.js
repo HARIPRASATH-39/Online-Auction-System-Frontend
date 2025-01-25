@@ -14,10 +14,9 @@ const AuctionPlatform = () => {
   const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState(90);
   const [isAuctionActive, setIsAuctionActive] = useState(true);
-  const navigate = useNavigate();
-  const userId = localStorage.getItem("userId");
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const userId = sessionStorage.getItem("userId");
+
+  const token = sessionStorage.getItem("token");
 
   // Fetch product and auction details
   useEffect(() => {
@@ -30,7 +29,7 @@ const AuctionPlatform = () => {
         setCurrentBid(response.data.highest_bid || response.data.price); // Initialize current bid
 
         // Check if the auction has already started
-        const auctionStartTime = localStorage.getItem(
+        const auctionStartTime = sessionStorage.getItem(
           `auctionStartTime_${productId}`
         );
         if (auctionStartTime) {
@@ -76,7 +75,9 @@ const AuctionPlatform = () => {
         `http://localhost:8081/auction/bid/${userId}/${productId}`,
         { amount: parseFloat(bidAmount) },
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -85,7 +86,7 @@ const AuctionPlatform = () => {
 
       // Start timer if it's the first bid
       if (currentBid === product.price) {
-        localStorage.setItem(
+        sessionStorage.setItem(
           `auctionStartTime_${productId}`,
           Date.now().toString()
         );

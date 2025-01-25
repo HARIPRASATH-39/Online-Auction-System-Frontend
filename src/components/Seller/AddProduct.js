@@ -12,9 +12,9 @@ const AddProduct = () => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState("");
   const navigate = useNavigate();
-  const userId = localStorage.getItem("userId");
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const userId = sessionStorage.getItem("userId");
+
+  const token = sessionStorage.getItem("token");
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -22,14 +22,15 @@ const AddProduct = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.get(
         "http://localhost:8081/auction/category/getAllCategory",
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setCategories(response.data);
@@ -74,12 +75,9 @@ const AddProduct = () => {
         `http://localhost:8081/auction/product/add/user/${userId}`,
         formData, // Send FormData
         {
-          auth: {
-            username,
-            password,
-          },
           headers: {
             "Content-Type": "multipart/form-data", // Set content type for file upload
+            Authorization: `Bearer ${token}`,
           },
         }
       );

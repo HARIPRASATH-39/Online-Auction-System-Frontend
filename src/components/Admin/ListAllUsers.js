@@ -13,8 +13,7 @@ const ListAllUsers = () => {
   const [showConfirmation, setShowConfirmation] = useState(false); // State for confirmation dialog
   const [userToDelete, setUserToDelete] = useState(null); // State to store the user to delete
 
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const token = sessionStorage.getItem("token");
 
   useEffect(() => {
     fetchUsers();
@@ -25,7 +24,9 @@ const ListAllUsers = () => {
       const response = await axios.get(
         "http://localhost:8081/auction/user/listAllUsers",
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setUsers(response.data);
@@ -39,7 +40,9 @@ const ListAllUsers = () => {
       await axios.delete(
         `http://localhost:8081/auction/user/delete/${userId}`,
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       toast.success("User Deleted Successfully");

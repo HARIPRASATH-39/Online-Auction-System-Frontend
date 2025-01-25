@@ -5,11 +5,10 @@ const PlaceBid = () => {
   const [productId, setProductId] = useState("");
   const [bidAmount, setBidAmount] = useState(0);
 
-  const userId = localStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
 
   const placeBid = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     const auction = { amount: bidAmount, status: true };
 
@@ -18,7 +17,9 @@ const PlaceBid = () => {
         `http://localhost:8081/auction/bid/${userId}/${productId}`,
         auction,
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       alert("Bid placed successfully!");

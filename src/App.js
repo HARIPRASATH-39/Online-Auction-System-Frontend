@@ -26,13 +26,13 @@ import AdminCategory from "./components/Admin/AdminCategory.js";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
-    localStorage.getItem("loggedIn") === "true"
+    sessionStorage.getItem("loggedIn") === "true"
   );
-  const [userRole, setUserRole] = useState(localStorage.getItem("userRole"));
+  const [userRole, setUserRole] = useState(sessionStorage.getItem("userRole"));
 
   useEffect(() => {
-    localStorage.setItem("loggedIn", loggedIn);
-    localStorage.setItem("userRole", userRole);
+    sessionStorage.setItem("loggedIn", loggedIn);
+    sessionStorage.setItem("userRole", userRole);
   }, [loggedIn, userRole]);
 
   return (

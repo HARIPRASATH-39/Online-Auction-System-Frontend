@@ -15,14 +15,15 @@ const ListAllCategories = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.get(
         "http://localhost:8081/auction/category/getAllCategory",
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setCategories(response.data);

@@ -7,19 +7,20 @@ import "./AddWalletAmount.css"; // Custom CSS for AddWalletAmount
 
 const AddWalletAmount = () => {
   const [amount, setAmount] = useState(0);
-  const userId = localStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
   const navigate = useNavigate();
 
   const addFunds = async () => {
-    const username = localStorage.getItem("username");
-    const password = localStorage.getItem("password");
+    const token = sessionStorage.getItem("token");
 
     try {
       await axios.put(
         `http://localhost:8081/auction/user/addAmount/${userId}/${amount}`,
         {},
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       toast.success("Amount added successfully!"); // Show success toast

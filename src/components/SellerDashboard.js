@@ -13,9 +13,8 @@ const SellerDashboard = () => {
   const [error, setError] = useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false); // State for confirmation dialog
   const [productToDelete, setProductToDelete] = useState(null); // State to store the product to delete
-  const userId = localStorage.getItem("userId");
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const userId = sessionStorage.getItem("userId");
+  const token = sessionStorage.getItem("token");
 
   // Fetch products for the seller
   useEffect(() => {
@@ -44,7 +43,9 @@ const SellerDashboard = () => {
       await axios.delete(
         `http://localhost:8081/auction/product/delete/${productId}`,
         {
-          auth: { username, password },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setProducts(
@@ -138,7 +139,7 @@ const SellerDashboard = () => {
         {/* Main Content */}
         <div className="col-md-10 p-4">
           <h3 className="welcome mb-4 text-white">
-            Welcome {localStorage.getItem("username")}
+            Welcome {sessionStorage.getItem("username")}
           </h3>
 
           {/* Add Product Button */}
